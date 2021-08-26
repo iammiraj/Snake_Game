@@ -2,6 +2,7 @@
 
 import pygame
 import random
+import sys
 
 from pygame import QUIT
 
@@ -78,6 +79,7 @@ def gameLoop():
                     if event.key == pygame.K_q:
                         game_over = True
                         game_close = False
+                        sys.exit
                     if event.key == pygame.K_p:
                         gameLoop()
 
@@ -135,7 +137,7 @@ def gameLoop():
         clock.tick(snake_speed)
 
     pygame.quit()
-    quit()
+    sys.exit()
 
 
 gameLoop()
